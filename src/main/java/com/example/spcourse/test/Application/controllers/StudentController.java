@@ -1,6 +1,8 @@
 package com.example.spcourse.test.Application.controllers;
 
+import com.example.spcourse.test.Application.dto.response.StudentGeneralDto;
 import com.example.spcourse.test.Domain.entity.Student;
+import com.example.spcourse.test.Domain.service.StudentService;
 import com.example.spcourse.test.External.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +21,19 @@ public class StudentController {
 
     //dependancy injection - field
 //    @Autowired
-    private StudentRepository studentRepository;
-    @GetMapping("/list")
-    public Student getStudent(){
-        Optional<Student> student = studentRepository.findByName("uchi");
-        if (student.isPresent()) {
-            return student.get();
-        }else {
-            return new Student();
-        }
+//    private StudentRepository studentRepository;
+
+    //use student service
+    private StudentService studentService;
+
+    @GetMapping("/getStudent")
+    public StudentGeneralDto getStudent(Integer id){
+//        Optional<Student> student = studentRepository.findByName("uchi");
+//        if (student.isPresent()) {
+//            return student.get();
+//        }else {
+//            return new Student();
+//        }
     }
 
     @PostMapping("/add")
