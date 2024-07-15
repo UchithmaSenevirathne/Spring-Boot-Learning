@@ -3,6 +3,7 @@ package com.example.spcourse.test.Domain.service;
 import com.example.spcourse.test.Application.dto.request.CreateStudentDto;
 import com.example.spcourse.test.Application.dto.response.StudentGeneralDto;
 import com.example.spcourse.test.Domain.entity.Student;
+import com.example.spcourse.test.Domain.exception.StudentNotFoundException;
 import com.example.spcourse.test.External.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
