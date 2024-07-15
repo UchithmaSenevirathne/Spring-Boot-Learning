@@ -51,5 +51,14 @@ public class StudentService {
     }
 
     public ResponseEntity<String> updateStudent(Integer id, String newName) {
+        Optional<Student> optionalStudent = studentRepository.findById(id);
+        if (optionalStudent.isPresent()){
+            Student student = optionalStudent.get();
+            student.setName(newName);
+            studentRepository.save(student);
+            return ResponseEntity.ok("student updated successfully");
+        }else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
