@@ -48,4 +48,9 @@ public class StudentController {
     public ResponseEntity<Student> addStudent(@RequestBody CreateStudentDto createStudentDto){
         return studentService.addStudent(createStudentDto);
     }
+
+    @DeleteMapping("/deleteStudent")
+    public ResponseEntity<String> deleteStudent(@RequestParam Integer id){
+        return studentService.deleteStudent(id);
+    }
 }
