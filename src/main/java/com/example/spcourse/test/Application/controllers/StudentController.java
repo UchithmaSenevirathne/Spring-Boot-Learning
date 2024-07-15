@@ -28,7 +28,7 @@ public class StudentController {
     @GetMapping("/getStudent")
     public ResponseEntity<StudentGeneralDto> getStudent(@RequestParam Integer id){
         //*****RequestParam
-        return studentService.getStudent();
+        return studentService.getStudent(id);
 //        ResponseEntity<Integer> responseEntity = new ResponseEntity<>(id, HttpStatus.OK);
 //        return responseEntity;
 
