@@ -30,6 +30,13 @@ public class StudentService {
     }
 
     public ResponseEntity<Student> addStudent(CreateStudentDto createStudentDto) {
-
+        Student student = new Student();
+        student.setName(createStudentDto.getName());
+        student.setAddress(createStudentDto.getAddress());
+        student.setEmail(createStudentDto.getEmail());
+        student.setGrade(createStudentDto.getGrade());
+        studentRepository.save(student);
+        ResponseEntity<Student> responseEntity = ResponseEntity.ok(student);
+        return responseEntity;
     }
 }
