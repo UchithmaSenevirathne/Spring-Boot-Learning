@@ -1,5 +1,6 @@
 package com.example.spcourse.test.Application.controllers;
 
+import com.example.spcourse.test.Application.dto.request.CreateStudentDto;
 import com.example.spcourse.test.Application.dto.response.StudentGeneralDto;
 import com.example.spcourse.test.Domain.entity.Student;
 import com.example.spcourse.test.Domain.service.StudentService;
@@ -44,7 +45,7 @@ public class StudentController {
     }
 
     @PostMapping("/addStudent")
-    public ResponseEntity<Student> addStudent(){
+    public ResponseEntity<Student> addStudent(CreateStudentDto createStudentDto){
 
     }
 }
