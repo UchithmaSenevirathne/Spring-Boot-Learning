@@ -6,6 +6,8 @@ import com.example.spcourse.test.Domain.service.StudentService;
 import com.example.spcourse.test.External.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,9 +25,15 @@ public class StudentController {
     //use student service
     private StudentService studentService;
 
-    @GetMapping("/getStudent/{id}")
-    public String getStudent(@PathVariable Integer id){
-        return id.toString();
+    @GetMapping("/getStudent")
+    public ResponseEntity<Integer> getStudent(@RequestParam Integer id){
+        //*****RequestParam
+        ResponseEntity<Integer> responseEntity = new ResponseEntity<>(id, HttpStatus.OK);
+        return responseEntity;
+
+        //*****pathvariable
+//        return id.toString();
+
 //        Optional<Student> student = studentRepository.findByName("uchi");
 //        if (student.isPresent()) {
 //            return student.get();
