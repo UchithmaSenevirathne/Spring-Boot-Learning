@@ -26,10 +26,11 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/getStudent")
-    public ResponseEntity<Integer> getStudent(@RequestParam Integer id){
+    public ResponseEntity<StudentGeneralDto> getStudent(@RequestParam Integer id){
         //*****RequestParam
-        ResponseEntity<Integer> responseEntity = new ResponseEntity<>(id, HttpStatus.OK);
-        return responseEntity;
+        return studentService.getStudent();
+//        ResponseEntity<Integer> responseEntity = new ResponseEntity<>(id, HttpStatus.OK);
+//        return responseEntity;
 
         //*****pathvariable
 //        return id.toString();
