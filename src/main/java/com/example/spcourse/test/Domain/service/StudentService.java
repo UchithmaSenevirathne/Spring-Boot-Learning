@@ -5,6 +5,7 @@ import com.example.spcourse.test.Application.dto.response.StudentGeneralDto;
 import com.example.spcourse.test.Domain.entity.Student;
 import com.example.spcourse.test.External.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class StudentService {
     private final StudentRepository studentRepository;
     public ResponseEntity<StudentGeneralDto> getStudent(Integer id) {
