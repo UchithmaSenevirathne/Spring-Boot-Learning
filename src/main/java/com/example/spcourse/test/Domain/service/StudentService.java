@@ -41,5 +41,12 @@ public class StudentService {
     }
 
     public ResponseEntity<String> deleteStudent(Integer id) {
+        Optional<Student> optionalStudent = studentRepository.findById(id);
+        if (optionalStudent.isPresent()){
+            studentRepository.deleteById(id);
+            return ResponseEntity.ok("Student delete successfully");
+        }else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
