@@ -39,4 +39,7 @@ public class StudentService {
         ResponseEntity<Student> responseEntity = ResponseEntity.ok(student);
         return responseEntity;
     }
+
+    public ResponseEntity<String> deleteStudent(Integer id) {
+    }
 }
