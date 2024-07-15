@@ -53,4 +53,9 @@ public class StudentController {
     public ResponseEntity<String> deleteStudent(@RequestParam Integer id){
         return studentService.deleteStudent(id);
     }
+
+    @PutMapping("/updateStudent")
+    public ResponseEntity<String> updateStudent(@RequestParam Integer id, @RequestParam String newName){
+        return studentService.updateStudent(id, newName);
+    }
 }
