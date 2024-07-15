@@ -29,4 +29,7 @@ public class StudentService {
         }
     }
 
+    public ResponseEntity<Student> addStudent(CreateStudentDto createStudentDto) {
+
+    }
 }
