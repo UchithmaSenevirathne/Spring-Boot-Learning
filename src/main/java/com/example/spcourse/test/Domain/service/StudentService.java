@@ -55,6 +55,7 @@ public class StudentService {
     public ResponseEntity<String> updateStudent(Integer id, String newName) {
         Optional<Student> optionalStudent = studentRepository.findById(id);
         if (optionalStudent.isPresent()){
+            log.info("student found");
             Student student = optionalStudent.get();
             student.setName(newName);
             studentRepository.save(student);
