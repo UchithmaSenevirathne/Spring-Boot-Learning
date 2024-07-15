@@ -22,7 +22,7 @@ public class StudentController {
     private StudentRepository studentRepository;
     @GetMapping("/list")
     public Student getStudent(){
-        Optional<Student> student = studentRepository.findById(1);
+        Optional<Student> student = studentRepository.findByName("uchi");
         if (student.isPresent()) {
             return student.get();
         }else {
