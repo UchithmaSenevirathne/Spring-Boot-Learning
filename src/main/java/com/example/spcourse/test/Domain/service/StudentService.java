@@ -63,7 +63,11 @@ public class StudentService {
             return ResponseEntity.ok("student updated successfully");
         }else {
 //            return ResponseEntity.notFound().build();
+
+            //throw runtime exception
 //            throw new RuntimeException("student not found");
+
+            //exception handle through custom exception
             throw new StudentNotFoundException("student not found");
         }
     }
