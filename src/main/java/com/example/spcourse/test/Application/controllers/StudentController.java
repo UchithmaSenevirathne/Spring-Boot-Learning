@@ -6,10 +6,7 @@ import com.example.spcourse.test.Domain.service.StudentService;
 import com.example.spcourse.test.External.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +23,9 @@ public class StudentController {
     //use student service
     private StudentService studentService;
 
-    @GetMapping("/getStudent")
-    public StudentGeneralDto getStudent(Integer id){
+    @GetMapping("/getStudent/{id}")
+    public String getStudent(@PathVariable Integer id){
+        return id.toString();
 //        Optional<Student> student = studentRepository.findByName("uchi");
 //        if (student.isPresent()) {
 //            return student.get();
