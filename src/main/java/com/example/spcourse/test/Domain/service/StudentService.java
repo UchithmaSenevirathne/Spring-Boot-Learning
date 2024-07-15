@@ -49,4 +49,7 @@ public class StudentService {
             return ResponseEntity.notFound().build();
         }
     }
+
+    public ResponseEntity<String> updateStudent(Integer id, String newName) {
+    }
 }
