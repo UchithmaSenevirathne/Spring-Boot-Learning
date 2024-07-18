@@ -41,5 +41,10 @@ public class SubjectService {
         return responseEntity;
     }
 
+    public void enrollStudentToSubject(Integer subjectId, Integer studentId) {
+        Subject subject = subjectRepository.getOne(subjectId);
+        Student student = studentRepository.getOne(studentId);
+        subject.enrollStudent(student);
+    }
 
 }
