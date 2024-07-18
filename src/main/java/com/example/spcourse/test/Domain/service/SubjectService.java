@@ -43,8 +43,8 @@ public class SubjectService {
     }
 
     public Subject enrollStudentToSubject(Integer subjectId, Integer studentId) {
-        Subject subject = subjectRepository.getOne(subjectId);
-        Student student = studentRepository.getOne(studentId);
+        Subject subject = subjectRepository.findById(subjectId).get();
+        Student student = studentRepository.findById(studentId).get();
         subject.enrollStudent(student);
         return subjectRepository.save(subject);
     }
