@@ -28,5 +28,6 @@ public class Subject {
 
 
     public void enrollStudent(Student student) {
+        enrolledStudent.add(student);
     }
 }
