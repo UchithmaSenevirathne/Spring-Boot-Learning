@@ -24,4 +24,12 @@ public class SubjectController {
     public ResponseEntity<Subject> addSubject(@RequestBody CreateSubjectDto createSubjectDto){
         return subjectService.addSubject(createSubjectDto);
     }
+
+    @PutMapping("/{subjectId}/students/{studentId}")
+    Subject enrollStudentToSubject(
+            @PathVariable Integer subjectId,
+            @PathVariable Integer studentId
+    ){
+        subjectService.enrollStudentToSubject(subjectId,studentId);
+    }
 }

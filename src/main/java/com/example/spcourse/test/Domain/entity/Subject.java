@@ -25,4 +25,6 @@ public class Subject {
     Set<Student> enrolledStudent = new HashSet<>();
 
     private String name;
+
+
 }

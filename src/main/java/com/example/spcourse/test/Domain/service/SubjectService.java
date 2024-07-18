@@ -2,6 +2,8 @@ package com.example.spcourse.test.Domain.service;
 
 import com.example.spcourse.test.Application.dto.request.CreateSubjectDto;
 import com.example.spcourse.test.Application.dto.response.SubjectGeneralDto;
+import com.example.spcourse.test.Domain.entity.Student;
+import com.example.spcourse.test.External.repositories.StudentRepository;
 import com.example.spcourse.test.External.repositories.SubjectRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,7 @@ import java.util.Optional;
 @Slf4j
 public class SubjectService {
     private final SubjectRepository subjectRepository;
+    private final StudentRepository studentRepository;
     public ResponseEntity<SubjectGeneralDto> getSubject(Integer id) {
         SubjectGeneralDto subjectGeneralDto = new SubjectGeneralDto();
         Optional<Subject> optionalSubject = subjectRepository.findById(id);
@@ -37,4 +40,6 @@ public class SubjectService {
         ResponseEntity<Subject> responseEntity = ResponseEntity.ok(subject);
         return responseEntity;
     }
+
+
 }
