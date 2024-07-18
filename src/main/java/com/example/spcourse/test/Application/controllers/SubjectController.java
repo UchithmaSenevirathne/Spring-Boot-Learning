@@ -30,6 +30,6 @@ public class SubjectController {
             @PathVariable Integer subjectId,
             @PathVariable Integer studentId
     ){
-        subjectService.enrollStudentToSubject(subjectId,studentId);
+        return subjectService.enrollStudentToSubject(subjectId,studentId);
     }
 }
