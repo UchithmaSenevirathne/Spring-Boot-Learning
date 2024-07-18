@@ -17,6 +17,11 @@ public class Subject {
     private Integer id;
 
     @ManyToMany
+    @JoinTable(
+            name = "student_enrolled",
+            joinColumns = @JoinColumn(name = "subject_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
     Set<Student> enrolledStudent = new HashSet<>();
 
     private String name;
