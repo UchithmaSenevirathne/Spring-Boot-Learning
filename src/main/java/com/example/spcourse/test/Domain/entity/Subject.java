@@ -24,6 +24,10 @@ public class Subject {
     )
     Set<Student> enrolledStudent = new HashSet<>();
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+    private Teacher teacher;
+
     private String name;
 
 
