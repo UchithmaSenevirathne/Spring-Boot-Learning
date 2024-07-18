@@ -1,5 +1,6 @@
 package com.example.spcourse.test.Domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,7 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "enrolledStudent")
     private Set<Subject> enrolledSubject = new HashSet<>();
 
