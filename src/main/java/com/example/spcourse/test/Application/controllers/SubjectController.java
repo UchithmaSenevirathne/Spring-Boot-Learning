@@ -25,7 +25,7 @@ public class SubjectController {
         return subjectService.addSubject(createSubjectDto);
     }
 
-    @PutMapping("/{subjectId}/students/{studentId}")
+    @PutMapping("/{subjectId}/student/{studentId}")
     Subject enrollStudentToSubject(
             @PathVariable Integer subjectId,
             @PathVariable Integer studentId

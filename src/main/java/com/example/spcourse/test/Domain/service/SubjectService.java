@@ -26,6 +26,7 @@ public class SubjectService {
         if (optionalSubject.isPresent()){
             Subject subject = optionalSubject.get();
             subjectGeneralDto.setId(subject.getId());
+            subjectGeneralDto.setEnrolledStudent(subject.getEnrolledStudent());
             subjectGeneralDto.setName(subject.getName());
             return ResponseEntity.ok(subjectGeneralDto);
         }else {
