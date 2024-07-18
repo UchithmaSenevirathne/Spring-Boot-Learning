@@ -3,8 +3,10 @@ package com.example.spcourse.test.Domain.service;
 import com.example.spcourse.test.Application.dto.request.CreateSubjectDto;
 import com.example.spcourse.test.Application.dto.response.SubjectGeneralDto;
 import com.example.spcourse.test.Domain.entity.Student;
+import com.example.spcourse.test.Domain.entity.Teacher;
 import com.example.spcourse.test.External.repositories.StudentRepository;
 import com.example.spcourse.test.External.repositories.SubjectRepository;
+import com.example.spcourse.test.External.repositories.TeacherRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ import java.util.Optional;
 public class SubjectService {
     private final SubjectRepository subjectRepository;
     private final StudentRepository studentRepository;
+    private final TeacherRepository teacherRepository;
     public ResponseEntity<SubjectGeneralDto> getSubject(Integer id) {
         SubjectGeneralDto subjectGeneralDto = new SubjectGeneralDto();
         Optional<Subject> optionalSubject = subjectRepository.findById(id);
@@ -49,4 +52,10 @@ public class SubjectService {
         return subjectRepository.save(subject);
     }
 
+    public Subject enrollTeacherToSubject(Integer subjectId, Integer teacherId) {
+        Subject subject = subjectRepository.findById(subjectId).get();
+        Teacher teacher = teacherRepository.findById(teacherId).get();
+        subject.enrollTeacher(teacher);
+        return subjectRepository.save(subject);
+    }
 }

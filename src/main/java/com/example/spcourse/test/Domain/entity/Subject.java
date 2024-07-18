@@ -34,4 +34,8 @@ public class Subject {
     public void enrollStudent(Student student) {
         enrolledStudent.add(student);
     }
+
+    public void enrollTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 }
